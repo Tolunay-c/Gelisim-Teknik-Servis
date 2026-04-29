@@ -1,0 +1,647 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Gelişim Teknik Servis | İzmir Beyaz Eşya, Klima ve Kombi Servisi</title>
+  <meta
+    name="description"
+    content="Gelişim Teknik Servis – İzmir Bornova merkezli, beyaz eşya, klima, kombi ve soğutma sistemleri için garantili, hızlı ve uzman teknik servis hizmeti."
+  />
+
+  <!-- Plus Jakarta Sans -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap"
+    rel="stylesheet"
+  />
+
+  <!-- Material Icons Round -->
+  <link
+    href="https://fonts.googleapis.com/icon?family=Material+Icons+Round"
+    rel="stylesheet"
+  />
+
+  <!-- AOS -->
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+
+  <link rel="stylesheet" href="/assets/css/main.css" />
+</head>
+<body>
+  <!-- ============ HEADER ============ -->
+  <header class="site-header">
+    <div class="container header-inner">
+      <a href="#" class="logo" aria-label="Gelişim Teknik Servis">
+        <span class="logo-mark">
+          <i class="material-icons-round">handyman</i>
+        </span>
+        <span class="logo-text">
+          Gelişim<span class="logo-text-accent">Teknik</span>
+        </span>
+      </a>
+
+      <nav class="nav" aria-label="Ana menü">
+        <a href="#hizmetler">Hizmetler</a>
+        <a href="#markalar">Markalar</a>
+        <a href="#neden-biz">Neden Biz?</a>
+        <a href="#iletisim">İletişim</a>
+      </nav>
+
+      <a href="tel:02323486160" class="btn btn-primary header-cta">
+        <i class="material-icons-round">phone_in_talk</i>
+        Hemen Ara
+      </a>
+
+      <!-- Hamburger button (mobil) -->
+      <button
+        class="hamburger"
+        type="button"
+        id="hamburgerBtn"
+        aria-label="Menüyü aç"
+        aria-controls="mobileMenu"
+        aria-expanded="false"
+      >
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+  </header>
+
+  <!-- ============ MOBİL MENÜ ============ -->
+  <div class="mobile-menu-backdrop" id="mobileMenuBackdrop" aria-hidden="true"></div>
+
+  <aside class="mobile-menu" id="mobileMenu" aria-label="Mobil menü" aria-hidden="true">
+    <div class="mobile-menu-head">
+      <a href="#" class="logo" aria-label="Gelişim Teknik Servis">
+        <span class="logo-mark">
+          <i class="material-icons-round">handyman</i>
+        </span>
+        <span class="logo-text">
+          Gelişim<span class="logo-text-accent">Teknik</span>
+        </span>
+      </a>
+      <button
+        class="mobile-menu-close"
+        type="button"
+        id="mobileMenuClose"
+        aria-label="Menüyü kapat"
+      >
+        <i class="material-icons-round">close</i>
+      </button>
+    </div>
+
+    <nav class="mobile-nav" aria-label="Ana menü mobil">
+      <a href="#hizmetler" class="mobile-nav-link">
+        <i class="material-icons-round">build</i>
+        <span>Hizmetler</span>
+        <i class="material-icons-round arrow">chevron_right</i>
+      </a>
+      <a href="#markalar" class="mobile-nav-link">
+        <i class="material-icons-round">verified</i>
+        <span>Markalar</span>
+        <i class="material-icons-round arrow">chevron_right</i>
+      </a>
+      <a href="#neden-biz" class="mobile-nav-link">
+        <i class="material-icons-round">workspace_premium</i>
+        <span>Neden Biz?</span>
+        <i class="material-icons-round arrow">chevron_right</i>
+      </a>
+      <a href="#iletisim" class="mobile-nav-link">
+        <i class="material-icons-round">mail</i>
+        <span>İletişim</span>
+        <i class="material-icons-round arrow">chevron_right</i>
+      </a>
+    </nav>
+
+    <div class="mobile-menu-cta">
+      <a href="tel:02323486160" class="btn btn-primary btn-lg mobile-cta-btn">
+        <i class="material-icons-round">phone_in_talk</i>
+        0232 348 61 60
+      </a>
+      <a
+        href="https://wa.me/905322830594"
+        target="_blank"
+        rel="noopener"
+        class="btn btn-ghost btn-lg mobile-cta-btn mobile-cta-wa"
+      >
+        <i class="material-icons-round">chat</i>
+        WhatsApp ile Yaz
+      </a>
+    </div>
+
+    <div class="mobile-menu-info">
+      <div class="mobile-info-item">
+        <i class="material-icons-round">place</i>
+        <span>4076 Sokak No:51 Yeşilova, Bornova / İzmir</span>
+      </div>
+      <div class="mobile-info-item">
+        <i class="material-icons-round">schedule</i>
+        <span>Pzt – Cmt: 09:00 – 19:00</span>
+      </div>
+    </div>
+  </aside>
+
+  <!-- ============ HERO ============ -->
+  <section class="hero">
+    <div class="hero-bg" aria-hidden="true"></div>
+
+    <div class="container hero-inner">
+      <div class="hero-content" data-aos="fade-right" data-aos-duration="800">
+        <span class="badge">
+          <i class="material-icons-round">verified</i>
+          İzmir'in güvenilir teknik servisi
+        </span>
+
+        <h1>
+          Beyaz eşya ve iklimlendirme arızalarınıza
+          <span class="hl">aynı gün çözüm</span>
+        </h1>
+
+        <p class="hero-desc">
+          Çamaşır makinesinden kombiye, klimadan buzdolabına;
+          deneyimli kadromuz, modern teşhis cihazlarımız ve orijinal
+          yedek parça garantisiyle Bornova ve tüm İzmir'de yanınızdayız.
+        </p>
+
+        <div class="hero-cta">
+          <a href="tel:02323486160" class="btn btn-primary btn-lg">
+            <i class="material-icons-round">phone</i>
+            0232 348 61 60
+          </a>
+          <a href="#hizmetler" class="btn btn-ghost btn-lg">
+            Hizmetlerimiz
+            <i class="material-icons-round">arrow_forward</i>
+          </a>
+        </div>
+
+        <div class="hero-meta">
+          <div class="meta-item">
+            <span class="meta-icon"><i class="material-icons-round">schedule</i></span>
+            <div>
+              <strong>Aynı Gün</strong>
+              <span>Müdahale</span>
+            </div>
+          </div>
+          <div class="meta-divider" aria-hidden="true"></div>
+          <div class="meta-item">
+            <span class="meta-icon"><i class="material-icons-round">verified_user</i></span>
+            <div>
+              <strong>İşçilik</strong>
+              <span>Garantili</span>
+            </div>
+          </div>
+          <div class="meta-divider" aria-hidden="true"></div>
+          <div class="meta-item">
+            <span class="meta-icon"><i class="material-icons-round">engineering</i></span>
+            <div>
+              <strong>Uzman</strong>
+              <span>Kadro</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="hero-visual" data-aos="fade-left" data-aos-duration="900">
+        <div class="hero-card">
+          <div class="hero-card-img">
+            <i class="material-icons-round hero-card-icon">build_circle</i>
+            <span class="hero-card-label">Teknik Servis Görseli</span>
+          </div>
+
+          <div class="floating-card floating-1">
+            <span class="floating-icon ok">
+              <i class="material-icons-round">check_circle</i>
+            </span>
+            <div>
+              <strong>5.000+</strong>
+              <span>Tamamlanan Servis</span>
+            </div>
+          </div>
+
+          <div class="floating-card floating-2">
+            <span class="floating-icon star">
+              <i class="material-icons-round">stars</i>
+            </span>
+            <div>
+              <strong>4.9 / 5</strong>
+              <span>Müşteri Memnuniyeti</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ HİZMETLER ============ -->
+  <section class="section" id="hizmetler">
+    <div class="container">
+      <div class="section-head" data-aos="fade-up">
+        <span class="eyebrow">Hizmetlerimiz</span>
+        <h2>Her marka, her model için profesyonel servis</h2>
+        <p>
+          Uzman teknisyenlerimiz; modern teşhis cihazları ve orijinal
+          yedek parça ile cihazlarınızı ilk günkü performansına döndürür.
+        </p>
+      </div>
+
+      <div class="services-grid">
+        <article class="service-card" data-aos="fade-up" data-aos-delay="0">
+          <div class="service-icon"><i class="material-icons-round">local_laundry_service</i></div>
+          <h3>Çamaşır Makinesi Servisi</h3>
+          <p>Su almama, sıkma yapmama, ısıtma ve elektronik kart arızalarına yerinde profesyonel çözüm.</p>
+          <ul class="fault-list">
+            <li><i class="material-icons-round">check</i>Tambur & rulman değişimi</li>
+            <li><i class="material-icons-round">check</i>Pompa & rezistans onarımı</li>
+            <li><i class="material-icons-round">check</i>Elektronik kart tamiri</li>
+          </ul>
+        </article>
+
+        <article class="service-card" data-aos="fade-up" data-aos-delay="60">
+          <div class="service-icon"><i class="material-icons-round">kitchen</i></div>
+          <h3>Buzdolabı Servisi</h3>
+          <p>Soğutmama, ses yapma, su akıtma ve gaz kaçağı problemleri için kalıcı tamir.</p>
+          <ul class="fault-list">
+            <li><i class="material-icons-round">check</i>Gaz şarjı & kompresör</li>
+            <li><i class="material-icons-round">check</i>No-Frost sistem onarımı</li>
+            <li><i class="material-icons-round">check</i>Termostat & fan değişimi</li>
+          </ul>
+        </article>
+
+        <article class="service-card" data-aos="fade-up" data-aos-delay="120">
+          <div class="service-icon"><i class="material-icons-round">dishwasher_gen</i></div>
+          <h3>Bulaşık Makinesi Servisi</h3>
+          <p>Yıkamama, su tutmama, kurutma ve hata kodu sorunlarına uzman müdahale.</p>
+          <ul class="fault-list">
+            <li><i class="material-icons-round">check</i>Pompa & sirkülasyon onarımı</li>
+            <li><i class="material-icons-round">check</i>Hata kodu çözümü</li>
+            <li><i class="material-icons-round">check</i>Su giriş valfi değişimi</li>
+          </ul>
+        </article>
+
+        <article class="service-card" data-aos="fade-up" data-aos-delay="0">
+          <div class="service-icon"><i class="material-icons-round">microwave</i></div>
+          <h3>Fırın & Ocak Servisi</h3>
+          <p>Ankastre fırın, ocak ve davlumbaz arızaları için yerinde tamir hizmeti.</p>
+          <ul class="fault-list">
+            <li><i class="material-icons-round">check</i>Rezistans & termostat</li>
+            <li><i class="material-icons-round">check</i>Ateşleme & gaz ayarı</li>
+            <li><i class="material-icons-round">check</i>Cam ve menteşe değişimi</li>
+          </ul>
+        </article>
+
+        <article class="service-card" data-aos="fade-up" data-aos-delay="60">
+          <div class="service-icon"><i class="material-icons-round">ac_unit</i></div>
+          <h3>Klima Servisi</h3>
+          <p>Bakım, gaz dolumu, montaj-demontaj ve elektronik kart arızaları için tek adres.</p>
+          <ul class="fault-list">
+            <li><i class="material-icons-round">check</i>Yıllık bakım & temizlik</li>
+            <li><i class="material-icons-round">check</i>Gaz dolumu & kaçak tespiti</li>
+            <li><i class="material-icons-round">check</i>Profesyonel montaj</li>
+          </ul>
+        </article>
+
+        <article class="service-card" data-aos="fade-up" data-aos-delay="120">
+          <div class="service-icon"><i class="material-icons-round">local_fire_department</i></div>
+          <h3>Kombi Servisi</h3>
+          <p>Yanmama, ısıtmama, basınç ve sıcak su problemleri için güvenilir kombi servisi.</p>
+          <ul class="fault-list">
+            <li><i class="material-icons-round">check</i>Yıllık periyodik bakım</li>
+            <li><i class="material-icons-round">check</i>Eşanjör & sirkülasyon pompası</li>
+            <li><i class="material-icons-round">check</i>Elektronik kart tamiri</li>
+          </ul>
+        </article>
+
+        <article class="service-card service-card-wide" data-aos="fade-up" data-aos-delay="0">
+          <div class="service-icon"><i class="material-icons-round">mode_cool</i></div>
+          <h3>Soğutma Sistemleri</h3>
+          <p>Endüstriyel ve ticari tip soğutucular, derin dondurucular ve soğuk hava depoları için profesyonel servis çözümleri.</p>
+          <ul class="fault-list">
+            <li><i class="material-icons-round">check</i>Endüstriyel soğutucu bakımı</li>
+            <li><i class="material-icons-round">check</i>Soğuk oda kurulum & onarım</li>
+            <li><i class="material-icons-round">check</i>Kompresör & gaz sistemleri</li>
+          </ul>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ MARKALAR ============ -->
+  <section class="section section-soft" id="markalar">
+    <div class="container">
+      <div class="section-head" data-aos="fade-up">
+        <span class="eyebrow">Markalar</span>
+        <h2>Hizmet verdiğimiz başlıca markalar</h2>
+        <p>Tüm büyük markalar için orijinal yedek parça ve garantili işçilik. Listede markanızı göremezseniz lütfen bize ulaşın.</p>
+      </div>
+
+      <div class="brands-grid" data-aos="fade-up">
+        <div class="brand-chip"><span>Arçelik</span></div>
+        <div class="brand-chip"><span>Beko</span></div>
+        <div class="brand-chip"><span>Vestel</span></div>
+        <div class="brand-chip"><span>Bosch</span></div>
+        <div class="brand-chip"><span>Siemens</span></div>
+        <div class="brand-chip"><span>Profilo</span></div>
+        <div class="brand-chip"><span>Samsung</span></div>
+        <div class="brand-chip"><span>LG</span></div>
+        <div class="brand-chip"><span>Altus</span></div>
+        <div class="brand-chip"><span>Regal</span></div>
+        <div class="brand-chip"><span>Hoover</span></div>
+        <div class="brand-chip"><span>Indesit</span></div>
+        <div class="brand-chip"><span>Ariston</span></div>
+        <div class="brand-chip"><span>Hotpoint</span></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ NEDEN BİZ ============ -->
+  <section class="section" id="neden-biz">
+    <div class="container">
+      <div class="section-head" data-aos="fade-up">
+        <span class="eyebrow">Neden Biz?</span>
+        <h2>Güvenilir, hızlı ve şeffaf teknik servis</h2>
+        <p>Sadece arızayı tamir etmiyor; cihazınızın uzun ömürlü çalışması için bütüncül bir hizmet sunuyoruz.</p>
+      </div>
+
+      <div class="benefits-grid">
+        <div class="benefit-card" data-aos="fade-up" data-aos-delay="0">
+          <span class="benefit-icon"><i class="material-icons-round">schedule</i></span>
+          <h4>Aynı Gün Servis</h4>
+          <p>Talebinizi aldığımız gün, mümkün olan en kısa sürede yerinde müdahale ederiz.</p>
+        </div>
+        <div class="benefit-card" data-aos="fade-up" data-aos-delay="60">
+          <span class="benefit-icon"><i class="material-icons-round">verified_user</i></span>
+          <h4>İşçilik Garantisi</h4>
+          <p>Yapılan tüm işlemlere yazılı garanti veriyor, arkasında duruyoruz.</p>
+        </div>
+        <div class="benefit-card" data-aos="fade-up" data-aos-delay="120">
+          <span class="benefit-icon"><i class="material-icons-round">build_circle</i></span>
+          <h4>Orijinal Yedek Parça</h4>
+          <p>Tüm marka ve modellerde sadece orijinal yedek parça kullanıyoruz.</p>
+        </div>
+        <div class="benefit-card" data-aos="fade-up" data-aos-delay="0">
+          <span class="benefit-icon"><i class="material-icons-round">payments</i></span>
+          <h4>Şeffaf Fiyatlandırma</h4>
+          <p>İşlem öncesi net fiyat bilgisi; sürpriz ek ücret yok, gizli kalem yok.</p>
+        </div>
+        <div class="benefit-card" data-aos="fade-up" data-aos-delay="60">
+          <span class="benefit-icon"><i class="material-icons-round">engineering</i></span>
+          <h4>Uzman Teknik Kadro</h4>
+          <p>Yılların deneyimine sahip, sürekli eğitimlerle güncel kalan teknisyen ekibi.</p>
+        </div>
+        <div class="benefit-card" data-aos="fade-up" data-aos-delay="120">
+          <span class="benefit-icon"><i class="material-icons-round">support_agent</i></span>
+          <h4>Hafta Sonu Destek</h4>
+          <p>Acil arızalarınız için hafta sonu da ulaşılabilir, çözüm odaklı bir destek.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ İLETİŞİM ============ -->
+  <section class="section section-soft" id="iletisim">
+    <div class="container">
+      <div class="section-head" data-aos="fade-up">
+        <span class="eyebrow">İletişim</span>
+        <h2>Servis talebi oluşturun</h2>
+        <p>Telefon, e-posta veya formu doldurarak bize ulaşın. Ekibimiz en kısa sürede sizinle iletişime geçecektir.</p>
+      </div>
+
+      <div class="contact-grid">
+        <!-- Sol kolon: bilgiler -->
+        <aside class="contact-info" data-aos="fade-right">
+          <div class="info-card">
+            <span class="info-icon"><i class="material-icons-round">phone</i></span>
+            <div>
+              <span class="info-label">Telefon</span>
+              <a href="tel:02323486160" class="info-value">0232 348 61 60</a>
+            </div>
+          </div>
+
+          <div class="info-card">
+            <span class="info-icon"><i class="material-icons-round">smartphone</i></span>
+            <div>
+              <span class="info-label">Mobil / WhatsApp</span>
+              <a href="tel:05322830594" class="info-value">0532 283 05 94</a>
+            </div>
+          </div>
+
+          <div class="info-card">
+            <span class="info-icon"><i class="material-icons-round">mail</i></span>
+            <div>
+              <span class="info-label">E-posta</span>
+              <a href="mailto:gelisimteknikiklimlendirme@gmail.com" class="info-value info-value-sm"
+                >gelisimteknikiklimlendirme@gmail.com</a>
+            </div>
+          </div>
+
+          <div class="info-card">
+            <span class="info-icon"><i class="material-icons-round">location_on</i></span>
+            <div>
+              <span class="info-label">Adres</span>
+              <span class="info-value info-value-sm">
+                4076 Sokak No: 51 Yeşilova,<br />Bornova / İzmir
+              </span>
+            </div>
+          </div>
+
+          <div class="info-hours">
+            <i class="material-icons-round">schedule</i>
+            <div>
+              <strong>Çalışma Saatleri</strong>
+              <span>Pzt – Cmt: 09:00 – 19:00</span>
+            </div>
+          </div>
+        </aside>
+
+        <!-- Sağ kolon: form -->
+        <form class="contact-form" id="contactForm" data-aos="fade-left" novalidate>
+          <div class="form-row">
+            <div class="form-group">
+              <label for="name">Ad Soyad <span class="req">*</span></label>
+              <input
+                type="text"
+                id="name"
+                name="name"
+                placeholder="Adınız ve soyadınız"
+                autocomplete="name"
+                minlength="3"
+                maxlength="60"
+                pattern="[A-Za-zÇĞİıÖŞÜçğıöşü\s'\-]{3,60}"
+                oninput="this.value=this.value.replace(/[^A-Za-zÇĞİıÖŞÜçğıöşü\s'\-]/g,'')"
+                required
+                data-error-required="Ad soyad alanı boş bırakılamaz."
+                data-error-minlength="Ad soyad en az 3 karakter olmalıdır."
+                data-error-pattern="Lütfen geçerli bir ad soyad giriniz (sadece harfler)."
+              />
+              <span class="form-error" data-error-for="name"></span>
+            </div>
+
+            <div class="form-group">
+              <label for="phone">Telefon <span class="req">*</span></label>
+              <input
+                type="tel"
+                id="phone"
+                name="phone"
+                placeholder="05XX XXX XX XX"
+                autocomplete="tel"
+                inputmode="numeric"
+                maxlength="11"
+                minlength="10"
+                pattern="0[0-9]{9,10}"
+                oninput="this.value=this.value.replace(/\D/g,'').slice(0,11)"
+                onkeydown="if(['e','E','+','-','.',',',' '].includes(event.key))event.preventDefault()"
+                required
+                data-error-required="Telefon numarası boş bırakılamaz."
+                data-error-minlength="Telefon numarası en az 10 haneli olmalıdır."
+                data-error-pattern="Lütfen geçerli bir telefon numarası giriniz (örn: 05XX XXX XX XX)."
+              />
+              <span class="form-error" data-error-for="phone"></span>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for="email">E-posta <span class="optional">(opsiyonel)</span></label>
+            <input
+              type="email"
+              id="email"
+              name="email"
+              placeholder="ornek@mail.com"
+              autocomplete="email"
+              inputmode="email"
+              maxlength="80"
+              data-error-typemismatch="Lütfen geçerli bir e-posta adresi giriniz."
+            />
+            <span class="form-error" data-error-for="email"></span>
+          </div>
+
+          <div class="form-group">
+            <label for="service">Servis Türü <span class="req">*</span></label>
+            <div class="select-wrap">
+              <select
+                id="service"
+                name="service"
+                required
+                data-error-required="Lütfen bir servis türü seçiniz."
+              >
+                <option value="">Seçiniz</option>
+                <option>Çamaşır Makinesi</option>
+                <option>Buzdolabı</option>
+                <option>Bulaşık Makinesi</option>
+                <option>Fırın & Ocak</option>
+                <option>Klima</option>
+                <option>Kombi</option>
+                <option>Soğutma Sistemleri</option>
+              </select>
+              <i class="material-icons-round select-caret">expand_more</i>
+            </div>
+            <span class="form-error" data-error-for="service"></span>
+          </div>
+
+          <div class="form-group">
+            <label for="message">Arıza Açıklaması <span class="req">*</span></label>
+            <textarea
+              id="message"
+              name="message"
+              rows="5"
+              maxlength="500"
+              minlength="10"
+              placeholder="Cihaz markası, modeli ve arıza belirtilerini kısaca yazınız."
+              required
+              data-error-required="Lütfen arıza açıklamasını giriniz."
+              data-error-minlength="Açıklama en az 10 karakter olmalıdır."
+            ></textarea>
+            <div class="form-meta">
+              <span class="form-error" data-error-for="message"></span>
+              <span class="form-counter"><span id="msgCount">0</span> / 500</span>
+            </div>
+          </div>
+
+          <button type="submit" class="btn btn-primary btn-lg form-submit">
+            <i class="material-icons-round">send</i>
+            Talebi Gönder
+          </button>
+
+          <p class="form-success" id="formSuccess">
+            <i class="material-icons-round">check_circle</i>
+            Talebiniz alındı. En kısa sürede sizinle iletişime geçeceğiz.
+          </p>
+
+          <p class="form-note">
+            <i class="material-icons-round">lock</i>
+            Bilgileriniz yalnızca size geri dönüş yapmak için kullanılır.
+          </p>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ FOOTER ============ -->
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <a href="#" class="logo logo-light">
+          <span class="logo-mark"><i class="material-icons-round">handyman</i></span>
+          <span class="logo-text">Gelişim<span class="logo-text-accent">Teknik</span></span>
+        </a>
+        <p>İzmir Bornova merkezli, beyaz eşya, klima, kombi ve soğutma sistemleri için garantili teknik servis hizmeti.</p>
+      </div>
+
+      <div class="footer-col">
+        <h5>Hizmetler</h5>
+        <ul>
+          <li><a href="#hizmetler">Çamaşır Makinesi</a></li>
+          <li><a href="#hizmetler">Buzdolabı</a></li>
+          <li><a href="#hizmetler">Bulaşık Makinesi</a></li>
+          <li><a href="#hizmetler">Klima</a></li>
+          <li><a href="#hizmetler">Kombi</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h5>Kurumsal</h5>
+        <ul>
+          <li><a href="#neden-biz">Neden Biz?</a></li>
+          <li><a href="#markalar">Markalar</a></li>
+          <li><a href="#iletisim">İletişim</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h5>İletişim</h5>
+        <ul class="footer-contact">
+          <li><i class="material-icons-round">phone</i> 0232 348 61 60</li>
+          <li><i class="material-icons-round">smartphone</i> 0532 283 05 94</li>
+          <li><i class="material-icons-round">place</i> Yeşilova, Bornova / İzmir</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <div class="container footer-bottom-inner">
+        <span>© 2026 Gelişim Teknik Servis. Tüm hakları saklıdır.</span>
+        <span class="footer-region"><i class="material-icons-round">place</i> İzmir & çevresi</span>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ============ WHATSAPP FLOATING ============ -->
+  <a
+    href="https://wa.me/905322830594"
+    target="_blank"
+    rel="noopener"
+    class="whatsapp-float"
+    aria-label="WhatsApp ile iletişime geç"
+  >
+    <svg viewBox="0 0 32 32" width="28" height="28" aria-hidden="true">
+      <path fill="currentColor" d="M19.11 17.21c-.3-.15-1.78-.88-2.06-.98-.28-.1-.48-.15-.68.15-.2.3-.78.98-.96 1.18-.18.2-.35.22-.65.07-.3-.15-1.27-.47-2.42-1.5-.9-.8-1.5-1.78-1.67-2.08-.18-.3-.02-.46.13-.61.13-.13.3-.35.45-.52.15-.18.2-.3.3-.5.1-.2.05-.37-.02-.52-.07-.15-.68-1.62-.92-2.22-.24-.6-.5-.5-.68-.5h-.58c-.2 0-.52.07-.8.37-.27.3-1.05 1.02-1.05 2.5 0 1.47 1.07 2.9 1.22 3.1.15.2 2.1 3.2 5.1 4.48.71.3 1.27.49 1.7.62.71.23 1.36.2 1.87.12.57-.08 1.78-.72 2.03-1.42.25-.7.25-1.3.18-1.43-.08-.13-.28-.2-.58-.35z" />
+      <path fill="currentColor" d="M26.65 5.34A14.86 14.86 0 0 0 16.02.93C7.83.93 1.16 7.6 1.16 15.79c0 2.62.69 5.18 2 7.43L1 31.07l7.99-2.1a14.84 14.84 0 0 0 7.04 1.79h.01c8.19 0 14.86-6.66 14.86-14.86a14.78 14.78 0 0 0-4.25-10.56zM16.04 28.27h-.01c-2.22 0-4.4-.6-6.3-1.72l-.45-.27-4.74 1.24 1.27-4.62-.3-.47a12.32 12.32 0 0 1-1.9-6.64c0-6.81 5.55-12.36 12.37-12.36 3.3 0 6.4 1.29 8.74 3.62a12.27 12.27 0 0 1 3.62 8.75c0 6.81-5.55 12.37-12.3 12.37z" />
+    </svg>
+  </a>
+
+  <!-- AOS -->
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+ <script src="/assets/js/main.js"></script>
+</body>
+</html>
