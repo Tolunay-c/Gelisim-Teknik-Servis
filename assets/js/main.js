@@ -49,6 +49,7 @@
       const successBox = document.getElementById("formSuccess");
       const msgInput = document.getElementById("message");
       const msgCount = document.getElementById("msgCount");
+      const msgEmail = document.getElementById("email");
 
       // Karakter sayacı
       if (msgInput && msgCount) {
@@ -63,6 +64,7 @@
         if (v.typeMismatch) return field.dataset.errorTypemismatch || "Geçersiz format.";
         if (v.tooShort) return field.dataset.errorMinlength || "Çok kısa.";
         if (v.patternMismatch) return field.dataset.errorPattern || "Geçersiz format.";
+        if (v.emailMismatch) return field.dataset.errorPattern || "Geçersiz e-posta adresi.";
         return "";
       }
 
