@@ -1,0 +1,486 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Gelişim Teknik Servis | İzmir Beyaz Eşya, Klima ve Kombi Servisi</title>
+  <meta name="description" content="Gelişim Teknik Servis – İzmir Bornova merkezli, beyaz eşya, klima, kombi ve soğutma sistemleri için garantili, hızlı ve uzman teknik servis hizmeti." />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,400;14..32,500;14..32,600;14..32,700;14..32,800&display=swap" rel="stylesheet" />
+
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Round" rel="stylesheet" />
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+
+  <style>
+    :root {
+      --ink: #0a0a0a;
+      --paper: #fafaf8;
+      --yellow: #ffd600;
+      --yellow-dark: #e6be00;
+      --red: #ff3b30;
+      --blue: #007aff;
+      --border: 3px solid var(--ink);
+      --shadow: 6px 6px 0 var(--ink);
+      --shadow-hover: 10px 10px 0 var(--ink);
+      --radius: 0px;
+      --transition: 0.15s ease;
+      --container: 1200px;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: "Inter", system-ui, sans-serif;
+      font-size: 16px;
+      line-height: 1.5;
+      color: var(--ink);
+      background: var(--paper);
+      -webkit-font-smoothing: antialiased;
+    }
+
+    img, svg { display: block; max-width: 100%; }
+    a { color: inherit; text-decoration: none; }
+    ul { list-style: none; padding: 0; }
+
+    h1, h2, h3, h4 { font-weight: 800; color: var(--ink); letter-spacing: -0.02em; }
+    h1 { font-size: clamp(2.5rem, 8vw, 5rem); line-height: 0.95; }
+    h2 { font-size: clamp(1.8rem, 5vw, 3.2rem); line-height: 1.1; margin-bottom: 0.5em; }
+    h3 { font-size: 1.3rem; }
+    p { color: #222; margin-bottom: 1em; font-size: 1rem; }
+
+    .container { width: 100%; max-width: var(--container); margin: 0 auto; padding: 0 1.5rem; }
+
+    /* Buttons */
+    .btn {
+      display: inline-flex; align-items: center; gap: 8px;
+      padding: 0.75rem 1.5rem;
+      font-weight: 700; font-size: 1rem;
+      border: var(--border); background: var(--ink); color: #fff;
+      box-shadow: var(--shadow); transition: all var(--transition);
+      text-transform: uppercase; letter-spacing: 0.02em;
+      cursor: pointer; white-space: nowrap;
+    }
+    .btn:hover { background: var(--yellow); color: var(--ink); border-color: var(--ink); box-shadow: var(--shadow-hover); transform: translate(-2px, -2px); }
+    .btn-yellow { background: var(--yellow); color: var(--ink); }
+    .btn-white { background: #fff; color: var(--ink); }
+    .btn-lg { padding: 1rem 2rem; font-size: 1.1rem; }
+
+    /* Header */
+    .site-header {
+      border-bottom: var(--border); background: #fff;
+      position: sticky; top: 0; z-index: 100;
+    }
+    .header-inner {
+      display: flex; align-items: center; justify-content: space-between;
+      height: 72px; gap: 1rem;
+    }
+    .logo {
+      display: inline-flex; align-items: center; gap: 8px;
+      font-weight: 800; font-size: 1.2rem; color: var(--ink);
+      letter-spacing: -0.02em;
+    }
+    .logo-square {
+      width: 36px; height: 36px; background: var(--yellow);
+      border: var(--border); display: flex; align-items: center; justify-content: center;
+    }
+    .logo-square .material-icons-round { font-size: 22px; color: var(--ink); }
+    .nav { display: flex; gap: 0.5rem; }
+    .nav a {
+      padding: 0.5rem 1rem; font-weight: 600; font-size: 0.9rem;
+      border: 2px solid transparent; transition: all var(--transition);
+    }
+    .nav a:hover { border: 2px solid var(--ink); background: var(--yellow); }
+
+    /* Hamburger */
+    .hamburger {
+      display: none; flex-direction: column; justify-content: center; align-items: center;
+      gap: 5px; width: 44px; height: 44px; background: #fff; border: var(--border);
+      cursor: pointer; padding: 0; transition: background var(--transition);
+    }
+    .hamburger span { display: block; width: 22px; height: 3px; background: var(--ink); transition: all 0.3s; }
+    .hamburger.is-active span:nth-child(1) { transform: translateY(8px) rotate(45deg); }
+    .hamburger.is-active span:nth-child(2) { opacity: 0; }
+    .hamburger.is-active span:nth-child(3) { transform: translateY(-8px) rotate(-45deg); }
+
+    /* Mobile Menu */
+    .mobile-backdrop {
+      position: fixed; inset: 0; background: rgba(0,0,0,0.7);
+      z-index: 90; opacity: 0; visibility: hidden; transition: all 0.3s;
+    }
+    .mobile-backdrop.is-open { opacity: 1; visibility: visible; }
+    .mobile-menu {
+      position: fixed; top: 0; right: 0; width: min(340px, 90vw); height: 100dvh;
+      background: #fff; border-left: var(--border); z-index: 95;
+      transform: translateX(100%); transition: transform 0.35s ease;
+      display: flex; flex-direction: column; overflow-y: auto;
+    }
+    .mobile-menu.is-open { transform: translateX(0); }
+    .mobile-menu-head {
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 1rem 1.5rem; border-bottom: var(--border);
+    }
+    .mobile-close {
+      width: 40px; height: 40px; border: var(--border); background: #fff;
+      cursor: pointer; display: flex; align-items: center; justify-content: center;
+    }
+    .mobile-nav { padding: 1rem; flex: 1; }
+    .mobile-nav a {
+      display: flex; align-items: center; gap: 12px; padding: 0.75rem 1rem;
+      font-weight: 700; font-size: 1.1rem; border: 2px solid transparent;
+      margin-bottom: 0.5rem; transition: all var(--transition);
+    }
+    .mobile-nav a:hover { border: 2px solid var(--ink); background: var(--yellow); }
+    .mobile-nav .material-icons-round { font-size: 24px; }
+    .mobile-cta { padding: 1.5rem; border-top: var(--border); }
+    .mobile-cta .btn { width: 100%; justify-content: center; margin-bottom: 0.5rem; }
+
+    /* Hero */
+    .hero {
+      padding: 4rem 0; background: var(--yellow);
+      border-bottom: var(--border); position: relative; overflow: hidden;
+    }
+    .hero-inner { display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; align-items: center; }
+    .hero-content { display: flex; flex-direction: column; gap: 1.5rem; }
+    .hero-badge {
+      display: inline-flex; align-items: center; gap: 6px;
+      background: #fff; border: var(--border); padding: 0.4rem 1rem;
+      font-weight: 700; font-size: 0.85rem; width: fit-content;
+      box-shadow: 4px 4px 0 var(--ink);
+    }
+    .hero-desc { font-size: 1.1rem; max-width: 500px; font-weight: 500; }
+    .hero-cta { display: flex; gap: 1rem; flex-wrap: wrap; }
+    .hero-meta { display: flex; gap: 2rem; margin-top: 1rem; }
+    .meta-item { display: flex; align-items: center; gap: 0.5rem; font-weight: 600; }
+    .meta-item .material-icons-round { font-size: 28px; }
+
+    .hero-visual {
+      border: var(--border); background: #fff; padding: 2rem;
+      box-shadow: var(--shadow); position: relative;
+    }
+    .hero-visual .material-icons-round { font-size: 120px; }
+    .floating-card {
+      position: absolute; background: #fff; border: var(--border);
+      padding: 0.75rem 1rem; box-shadow: 4px 4px 0 var(--ink);
+      font-weight: 700; display: flex; align-items: center; gap: 0.5rem;
+    }
+    .floating-1 { top: -20px; left: -20px; }
+    .floating-2 { bottom: -20px; right: -20px; }
+
+    /* Sections */
+    .section { padding: 5rem 0; }
+    .section-head { max-width: 700px; margin: 0 auto 4rem; text-align: center; }
+    .eyebrow {
+      display: inline-block; font-size: 0.75rem; font-weight: 800; text-transform: uppercase;
+      letter-spacing: 0.1em; background: var(--ink); color: #fff; padding: 0.3rem 1rem;
+      border: var(--border); margin-bottom: 1rem;
+    }
+
+    /* Services */
+    .services-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; }
+    .service-card {
+      background: #fff; border: var(--border); padding: 2rem;
+      box-shadow: var(--shadow); transition: all var(--transition);
+      position: relative;
+    }
+    .service-card:hover { box-shadow: var(--shadow-hover); transform: translate(-3px, -3px); background: var(--yellow); }
+    .service-icon { font-size: 42px; margin-bottom: 1rem; }
+    .fault-list { border-top: 2px dashed var(--ink); padding-top: 1rem; margin-top: 1rem; display: flex; flex-direction: column; gap: 0.5rem; }
+    .fault-list li { display: flex; align-items: center; gap: 0.5rem; font-size: 0.9rem; }
+    .service-card-wide { grid-column: 1 / -1; }
+
+    /* Brands */
+    .brands-grid { display: grid; grid-template-columns: repeat(7, 1fr); gap: 0.75rem; }
+    .brand-chip {
+      background: #fff; border: var(--border); padding: 0.75rem 0.5rem;
+      text-align: center; font-weight: 700; font-size: 0.9rem;
+      box-shadow: 3px 3px 0 var(--ink); transition: all var(--transition);
+    }
+    .brand-chip:hover { background: var(--yellow); box-shadow: 5px 5px 0 var(--ink); transform: translate(-2px, -2px); }
+
+    /* Benefits */
+    .benefits-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; }
+    .benefit-card {
+      background: #fff; border: var(--border); padding: 2rem; text-align: center;
+      box-shadow: var(--shadow); transition: all var(--transition);
+    }
+    .benefit-card:hover { box-shadow: var(--shadow-hover); transform: translate(-3px, -3px); }
+    .benefit-icon-circle {
+      width: 64px; height: 64px; border: var(--border); border-radius: 50%;
+      display: flex; align-items: center; justify-content: center; margin: 0 auto 1rem;
+      background: var(--yellow);
+    }
+    .benefit-icon-circle .material-icons-round { font-size: 32px; }
+
+    /* Contact */
+    .contact-grid { display: grid; grid-template-columns: 1fr 1.5fr; gap: 2rem; }
+    .contact-info-cards { display: flex; flex-direction: column; gap: 1rem; }
+    .contact-info-card {
+      background: #fff; border: var(--border); padding: 1rem 1.5rem;
+      display: flex; align-items: center; gap: 1rem; font-weight: 600;
+      box-shadow: 3px 3px 0 var(--ink); transition: all var(--transition);
+    }
+    .contact-info-card:hover { box-shadow: 5px 5px 0 var(--ink); transform: translate(-2px, -2px); }
+    .contact-hours {
+      background: var(--ink); color: #fff; padding: 1rem 1.5rem; border: var(--border);
+      font-weight: 600; display: flex; align-items: center; gap: 0.5rem;
+    }
+
+    .contact-form {
+      background: #fff; border: var(--border); padding: 2rem;
+      box-shadow: var(--shadow); display: flex; flex-direction: column; gap: 1.2rem;
+    }
+    .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
+    .form-group { display: flex; flex-direction: column; gap: 0.3rem; }
+    .form-group label { font-weight: 700; font-size: 0.9rem; }
+    .form-group input, .form-group select, .form-group textarea {
+      padding: 0.75rem; border: var(--border); font-family: inherit; font-size: 1rem;
+      background: #fff; transition: all var(--transition);
+    }
+    .form-group input:focus, .form-group select:focus, .form-group textarea:focus {
+      outline: none; background: var(--yellow); box-shadow: 0 0 0 3px rgba(0,0,0,0.1);
+    }
+    .select-wrap { position: relative; }
+    .select-wrap select { appearance: none; padding-right: 2.5rem; }
+    .select-caret { position: absolute; right: 0.5rem; top: 50%; transform: translateY(-50%); pointer-events: none; }
+    .form-error { display: none; color: var(--red); font-size: 0.8rem; font-weight: 600; }
+    .form-group.has-error .form-error { display: block; }
+    .form-group.has-error input, .form-group.has-error select, .form-group.has-error textarea { border-color: var(--red); background: #fff5f5; }
+    .form-success {
+      display: none; background: #000; color: #fff; padding: 1rem; font-weight: 700; border: var(--border);
+    }
+    .form-success.is-visible { display: block; }
+
+    /* Footer */
+    .site-footer { background: var(--ink); color: #fff; border-top: var(--border); margin-top: 2rem; }
+    .footer-inner { display: grid; grid-template-columns: 1.5fr 1fr 1fr 1fr; gap: 2rem; padding: 3rem 0; }
+    .footer-logo { font-weight: 800; font-size: 1.3rem; color: #fff; display: flex; align-items: center; gap: 0.5rem; }
+    .footer-logo .logo-square { background: var(--yellow); }
+    .footer-col h5 { font-weight: 700; margin-bottom: 1rem; color: #fff; }
+    .footer-col ul li { margin-bottom: 0.5rem; }
+    .footer-col a { color: #aaa; transition: color var(--transition); }
+    .footer-col a:hover { color: var(--yellow); }
+    .footer-bottom { border-top: 1px solid #333; padding: 1.2rem 0; display: flex; justify-content: space-between; font-size: 0.85rem; color: #888; }
+
+    .whatsapp-float {
+      position: fixed; bottom: 20px; right: 20px; width: 56px; height: 56px;
+      background: #25d366; border: var(--border); box-shadow: 4px 4px 0 var(--ink);
+      display: flex; align-items: center; justify-content: center; border-radius: 50%;
+      z-index: 80; transition: all var(--transition);
+    }
+    .whatsapp-float:hover { box-shadow: 6px 6px 0 var(--ink); transform: translate(-2px, -2px); }
+
+    @media (max-width: 1024px) {
+      .nav, .header-cta { display: none; }
+      .hamburger { display: flex; }
+      .hero-inner { grid-template-columns: 1fr; }
+      .services-grid, .benefits-grid { grid-template-columns: repeat(2, 1fr); }
+      .brands-grid { grid-template-columns: repeat(4, 1fr); }
+      .contact-grid { grid-template-columns: 1fr; }
+      .footer-inner { grid-template-columns: 1fr 1fr; }
+    }
+
+    @media (max-width: 640px) {
+      .services-grid, .benefits-grid { grid-template-columns: 1fr; }
+      .brands-grid { grid-template-columns: repeat(3, 1fr); }
+      .form-row { grid-template-columns: 1fr; }
+      .footer-inner { grid-template-columns: 1fr; }
+      .hero-meta { flex-direction: column; gap: 0.5rem; }
+    }
+  </style>
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-inner">
+      <a href="#" class="logo">
+        <span class="logo-square"><i class="material-icons-round">handyman</i></span>
+        Gelişim<span style="color:var(--yellow-dark)">Teknik</span>
+      </a>
+      <nav class="nav">
+        <a href="#hizmetler">Hizmetler</a>
+        <a href="#markalar">Markalar</a>
+        <a href="#neden-biz">Neden Biz?</a>
+        <a href="#iletisim">İletişim</a>
+      </nav>
+      <a href="tel:02323486160" class="btn header-cta">Hemen Ara</a>
+      <button class="hamburger" id="hamburgerBtn" aria-label="Menü"><span></span><span></span><span></span></button>
+    </div>
+  </header>
+
+  <div class="mobile-backdrop" id="mobileBackdrop"></div>
+  <aside class="mobile-menu" id="mobileMenu">
+    <div class="mobile-menu-head">
+      <a href="#" class="logo"><span class="logo-square"><i class="material-icons-round">handyman</i></span>GelişimTeknik</a>
+      <button class="mobile-close" id="mobileClose"><i class="material-icons-round">close</i></button>
+    </div>
+    <nav class="mobile-nav">
+      <a href="#hizmetler"><i class="material-icons-round">build</i>Hizmetler</a>
+      <a href="#markalar"><i class="material-icons-round">verified</i>Markalar</a>
+      <a href="#neden-biz"><i class="material-icons-round">workspace_premium</i>Neden Biz?</a>
+      <a href="#iletisim"><i class="material-icons-round">mail</i>İletişim</a>
+    </nav>
+    <div class="mobile-cta">
+      <a href="tel:02323486160" class="btn btn-lg">0232 348 61 60</a>
+      <a href="https://wa.me/905322830594" class="btn btn-lg btn-yellow">WhatsApp</a>
+    </div>
+  </aside>
+
+  <section class="hero">
+    <div class="container hero-inner">
+      <div class="hero-content" data-aos="fade-up">
+        <span class="hero-badge"><i class="material-icons-round">verified</i> İzmir'in güvenilir servisi</span>
+        <h1>Beyaz eşya ve iklimlendirme arızalarınıza <span style="background: #fff; padding: 0 0.2em; border: 3px solid #000;">aynı gün çözüm</span></h1>
+        <p class="hero-desc">Çamaşır makinesinden kombiye, klimadan buzdolabına; deneyimli kadromuz, modern teşhis cihazlarımız ve orijinal yedek parça garantisiyle Bornova ve tüm İzmir'de yanınızdayız.</p>
+        <div class="hero-cta">
+          <a href="tel:02323486160" class="btn btn-lg">0232 348 61 60</a>
+          <a href="#hizmetler" class="btn btn-lg btn-white">Hizmetlerimiz <i class="material-icons-round">arrow_forward</i></a>
+        </div>
+        <div class="hero-meta">
+          <div class="meta-item"><i class="material-icons-round">schedule</i> Aynı Gün Müdahale</div>
+          <div class="meta-item"><i class="material-icons-round">verified_user</i> İşçilik Garantili</div>
+          <div class="meta-item"><i class="material-icons-round">engineering</i> Uzman Kadro</div>
+        </div>
+      </div>
+      <div class="hero-visual" data-aos="fade-left">
+        <i class="material-icons-round">build_circle</i>
+        <span style="font-weight:800; font-size:1.5rem;">Teknik Servis</span>
+        <div class="floating-card floating-1"><i class="material-icons-round">check_circle</i> 5.000+ Servis</div>
+        <div class="floating-card floating-2"><i class="material-icons-round">stars</i> 4.9 / 5 Memnuniyet</div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="hizmetler">
+    <div class="container">
+      <div class="section-head" data-aos="fade-up">
+        <span class="eyebrow">Hizmetlerimiz</span>
+        <h2>Her marka, her model için profesyonel servis</h2>
+        <p>Uzman teknisyenlerimiz; modern teşhis cihazları ve orijinal yedek parça ile cihazlarınızı ilk günkü performansına döndürür.</p>
+      </div>
+      <div class="services-grid">
+        <article class="service-card" data-aos="fade-up"><div class="service-icon"><i class="material-icons-round">local_laundry_service</i></div><h3>Çamaşır Makinesi</h3><p>Su almama, sıkma, ısıtma ve kart arızaları.</p><ul class="fault-list"><li><i class="material-icons-round">check</i>Tambur & rulman</li><li><i class="material-icons-round">check</i>Pompa & rezistans</li><li><i class="material-icons-round">check</i>Kart tamiri</li></ul></article>
+        <article class="service-card" data-aos="fade-up"><div class="service-icon"><i class="material-icons-round">kitchen</i></div><h3>Buzdolabı</h3><p>Soğutmama, ses, su akıtma, gaz kaçağı.</p><ul class="fault-list"><li><i class="material-icons-round">check</i>Gaz şarjı</li><li><i class="material-icons-round">check</i>No-Frost onarım</li><li><i class="material-icons-round">check</i>Termostat & fan</li></ul></article>
+        <article class="service-card" data-aos="fade-up"><div class="service-icon"><i class="material-icons-round">dishwasher_gen</i></div><h3>Bulaşık Makinesi</h3><p>Yıkamama, su tutmama, hata kodları.</p><ul class="fault-list"><li><i class="material-icons-round">check</i>Pompa onarımı</li><li><i class="material-icons-round">check</i>Hata kodu çözümü</li><li><i class="material-icons-round">check</i>Su giriş valfi</li></ul></article>
+        <article class="service-card" data-aos="fade-up"><div class="service-icon"><i class="material-icons-round">microwave</i></div><h3>Fırın & Ocak</h3><p>Ankastre fırın, ocak, davlumbaz arızaları.</p><ul class="fault-list"><li><i class="material-icons-round">check</i>Rezistans & termostat</li><li><i class="material-icons-round">check</i>Ateşleme & gaz ayarı</li><li><i class="material-icons-round">check</i>Cam & menteşe</li></ul></article>
+        <article class="service-card" data-aos="fade-up"><div class="service-icon"><i class="material-icons-round">ac_unit</i></div><h3>Klima</h3><p>Bakım, gaz dolumu, montaj, kart arızası.</p><ul class="fault-list"><li><i class="material-icons-round">check</i>Yıllık bakım</li><li><i class="material-icons-round">check</i>Gaz dolumu</li><li><i class="material-icons-round">check</i>Profesyonel montaj</li></ul></article>
+        <article class="service-card" data-aos="fade-up"><div class="service-icon"><i class="material-icons-round">local_fire_department</i></div><h3>Kombi</h3><p>Yanmama, ısıtmama, basınç sorunları.</p><ul class="fault-list"><li><i class="material-icons-round">check</i>Periyodik bakım</li><li><i class="material-icons-round">check</i>Eşanjör & pompa</li><li><i class="material-icons-round">check</i>Kart tamiri</li></ul></article>
+        <article class="service-card service-card-wide" data-aos="fade-up"><div class="service-icon"><i class="material-icons-round">mode_cool</i></div><h3>Soğutma Sistemleri</h3><p>Endüstriyel ve ticari soğutucular, derin dondurucular, soğuk hava depoları.</p><ul class="fault-list"><li><i class="material-icons-round">check</i>Endüstriyel bakım</li><li><i class="material-icons-round">check</i>Soğuk oda kurulum</li><li><i class="material-icons-round">check</i>Kompresör & gaz</li></ul></article>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="markalar" style="background:#fff;">
+    <div class="container">
+      <div class="section-head" data-aos="fade-up"><span class="eyebrow">Markalar</span><h2>Hizmet verdiğimiz başlıca markalar</h2><p>Tüm büyük markalar için orijinal yedek parça ve garantili işçilik.</p></div>
+      <div class="brands-grid" data-aos="fade-up">
+        <div class="brand-chip">Arçelik</div><div class="brand-chip">Beko</div><div class="brand-chip">Vestel</div><div class="brand-chip">Bosch</div><div class="brand-chip">Siemens</div><div class="brand-chip">Profilo</div><div class="brand-chip">Samsung</div><div class="brand-chip">LG</div><div class="brand-chip">Altus</div><div class="brand-chip">Regal</div><div class="brand-chip">Hoover</div><div class="brand-chip">Indesit</div><div class="brand-chip">Ariston</div><div class="brand-chip">Hotpoint</div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="neden-biz">
+    <div class="container">
+      <div class="section-head" data-aos="fade-up"><span class="eyebrow">Neden Biz?</span><h2>Güvenilir, hızlı ve şeffaf teknik servis</h2><p>Sadece arızayı tamir etmiyor; cihazınızın uzun ömürlü çalışması için bütüncül bir hizmet sunuyoruz.</p></div>
+      <div class="benefits-grid">
+        <div class="benefit-card" data-aos="fade-up"><div class="benefit-icon-circle"><i class="material-icons-round">schedule</i></div><h4>Aynı Gün Servis</h4><p>Talebinizi aldığımız gün yerinde müdahale.</p></div>
+        <div class="benefit-card" data-aos="fade-up"><div class="benefit-icon-circle"><i class="material-icons-round">verified_user</i></div><h4>İşçilik Garantisi</h4><p>Tüm işlemlere yazılı garanti veriyoruz.</p></div>
+        <div class="benefit-card" data-aos="fade-up"><div class="benefit-icon-circle"><i class="material-icons-round">build_circle</i></div><h4>Orijinal Yedek Parça</h4><p>Sadece orijinal parça kullanıyoruz.</p></div>
+        <div class="benefit-card" data-aos="fade-up"><div class="benefit-icon-circle"><i class="material-icons-round">payments</i></div><h4>Şeffaf Fiyat</h4><p>İşlem öncesi net fiyat, sürpriz yok.</p></div>
+        <div class="benefit-card" data-aos="fade-up"><div class="benefit-icon-circle"><i class="material-icons-round">engineering</i></div><h4>Uzman Kadro</h4><p>Yılların deneyimi, sürekli eğitim.</p></div>
+        <div class="benefit-card" data-aos="fade-up"><div class="benefit-icon-circle"><i class="material-icons-round">support_agent</i></div><h4>Hafta Sonu Destek</h4><p>Acil durumlarda hafta sonu ulaşılabiliriz.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="iletisim" style="background:#fff;">
+    <div class="container">
+      <div class="section-head" data-aos="fade-up"><span class="eyebrow">İletişim</span><h2>Servis talebi oluşturun</h2><p>Telefon, e-posta veya formu doldurarak bize ulaşın.</p></div>
+      <div class="contact-grid">
+        <aside class="contact-info-cards" data-aos="fade-up">
+          <div class="contact-info-card"><i class="material-icons-round">phone</i> 0232 348 61 60</div>
+          <div class="contact-info-card"><i class="material-icons-round">smartphone</i> 0532 283 05 94</div>
+          <div class="contact-info-card"><i class="material-icons-round">mail</i> gelisimteknikiklimlendirme@gmail.com</div>
+          <div class="contact-info-card"><i class="material-icons-round">location_on</i> 4076 Sokak No:51 Yeşilova, Bornova / İzmir</div>
+          <div class="contact-hours"><i class="material-icons-round">schedule</i> Pzt – Cmt: 09:00 – 19:00</div>
+        </aside>
+        <form class="contact-form" id="contactForm" data-aos="fade-up" novalidate>
+          <div class="form-row">
+            <div class="form-group"><label>Ad Soyad *</label><input type="text" id="name" required placeholder="Adınız soyadınız" /></div>
+            <div class="form-group"><label>Telefon *</label><input type="tel" id="phone" required placeholder="05XX XXX XX XX" /></div>
+          </div>
+          <div class="form-group"><label>E-posta (opsiyonel)</label><input type="email" id="email" placeholder="ornek@mail.com" /></div>
+          <div class="form-group">
+            <label>Servis Türü *</label>
+            <div class="select-wrap">
+              <select id="service" required><option value="">Seçiniz</option><option>Çamaşır Makinesi</option><option>Buzdolabı</option><option>Bulaşık Makinesi</option><option>Fırın & Ocak</option><option>Klima</option><option>Kombi</option><option>Soğutma Sistemleri</option></select>
+              <i class="material-icons-round select-caret">expand_more</i>
+            </div>
+          </div>
+          <div class="form-group"><label>Arıza Açıklaması *</label><textarea id="message" rows="4" required placeholder="Cihaz markası, modeli ve arıza belirtileri..."></textarea></div>
+          <button type="submit" class="btn btn-lg btn-yellow">Talebi Gönder</button>
+          <div class="form-success" id="formSuccess">✅ Talebiniz alındı, en kısa sürede dönüş yapacağız.</div>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="footer-brand"><a href="#" class="footer-logo"><span class="logo-square"><i class="material-icons-round">handyman</i></span>GelişimşimTeknikTeknik</a><p</a><p>>İzİzmir Bornmir Bornova merova merkezli,kezli, garantili teknik serv garantiliis.</p></div teknik servis.</p></div>
+      <div class="footer">
+      <div class="footer-col-col"><h5>Hizmetler</h5><ul><li><a href="#">Çamaşır Makinesi</a></li><li><a href="#">Buzdolabı</a></li><li><a href="#">Bulaşık Makinesi</a></li><li><a href="#">Klima</a></li><li><a href="#">Kombi</a></li></ul></div>
+
+    <div class="footer-col-col"><h5>Kurumsal</h5><ul><li><a href="#">Neden Biz?</a></li><li><a href="#">Markalar</a></li><li><a href="#">İletişim</a></li></ul></div>
+
+    <div class="footer-col-col"><h5>İletişim</h5><ul><li>0232 348 61 60</li><li>0532 283 05 94</li><li>Yeşilova, Bornova / İzmir</li></ul></div>
+
+    </div>
+
+  <div class="container footer-bottom"><span>© 2026 Gelişim Teknik Servis</span><span>İzmir & çevresi</span></div>
+
+  </footer>
+
+
+
+ <a href="https://https://wa.mewa.me/905/905322830322830594" class=" class="whatswhatsapp-float"app-float" target="_ target="_blankblank"><svg"><svg width width="28="28" height" height="28="28" view" viewBox="Box="0 0 0 0 32 32 32" fill="32" fill="whitewhite"><path d"><path d="M="M19.19.11 11 17.17.21c21c-.3-.3-.15-.15-1-1.78-.88.78-.88-2-2.06.06-.98-.98-.28-.28-.1-.1-.48-.48-.15-.15-.68-.68.15.15-.2-.2.3.3-.78-.78.98.98-.96-.96 1 1.18.18-.18-.18.2.2-.35-.35.22.22-.65.07-.65.07-.3-.3-.15-.15-1-1.27.27-.47-.47-2-2.42.42-1-1.5.5-.9-.9-.8-.8--11.5.5-1-1.78-1.78-1.67.67-2-2.08.08-.18-.18-.3-.3-.02-.02-.46-.46.13.13-.61-.61.13.13-.13-.13.3.3-.35-.35.45.45-.52-.52.15.15-.18-.18.2.2-.3-.3.3.3-.5-.5.1.1-.2-.2.05.05-.37-.37-.02-.02-.52-.52-.07-.15-.07-.15-.68-.68-1-1.62.62-.92-.92-2-2.22.22-.24-.24-.6-.6-.5-.5-.5-.5-.68-.68-.5-.5h-.h-.58c58c-.2-.2 0 0-.52-.52.07.07-.8-.8.37.37-.27-.27.3.3-1.05-1.05 1 1.02.02-1-1.05.05 2 2.5.5 0 0 1 1.47.47 1 1.07 2.07 2.9.9 1 1.22.22 3 3.1.1.15.15.2.2 2 2..1 31 3..2 52 5.1 4.1 4.48.48.71.71.3.3 1.27 1.27.49.49 1 1.7.7.62.71.62.71.23.23 1.36 1.36.2 1.2 1.87.87.12.12.57.57-.08-.08 1.78 1.78-.72-.72 2.03 2.03-1-1.42.25.42.25-.7-.7.25-1.25-1.3.3.18-1.18-1.43.43-.08-.08-.13-.28-.13-.28-.2-.58-.2-.58-.35-.35z"/z"/><path d="M26><path d="M26.65.65 5 5.34A14.86.34A14.86 14.86 0 14.86 0 0 0 0 0 16.02 16.02.93.93C7.83C7.83.93.93 1 1.16 7.16 7.6 1.6 1.16 15.79c0.16 15.79c0 2 2.62.69.62.69 5 5.18 2.18 2 7 7.43L1.43L1 31.07l7 31.07l7.99.99-2.1-2.1a14a14.84 14.84.84 14.84 0 0 0 0 0 0 7.04 1 7.04 1.79.79h.h.01c01c8.19 8.19 00  14.14.86-86-6.6.66 66 14.14.86-86-14.14.86a14.86a14.78 78 14.14.78 78 0 0 0 0 0-0-4.4.25-25-10.10.56z56zM16M16.04.04 28 28.27.27h-.h-.01c01c-2-2.22.22 0 0-4-4.4.4-.6-.6-6-6.3.3-1-1.72.72l-.l-.45-.27-4.45-.27-4.74 74 1.24 1.24 1.1.27-27-4.4.62-.62-.3-.3-.47a47a12.12.32 32 12.12.32 32 0 0 0 0 1-1-1.1.9-9-6.6.64c64c0-0-6.6.81 81 5.5.55-55-12.12.36 36 12.12.37-37-12.12.36 36 3.3.3 3 0 0 6.6.4 4 1.1.29 29 8.8.74 74 3.3.62a62a12.12.27 27 12.12.27 27 0 0 0 1 0 1 3.3.62 62 8.8.75c75c0 0 6.6.81-81-5.5.55 55 12.12.37-37-12.12.3 3 12.37z12.37z"/></svg></svg></a>
+
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script>
+    AOS.init({ once: true, duration: 600, easing: "ease-out-quadratic" });
+    // Mobile menu
+    const btn = document.getElementById("hamburgerBtn"),
+          menu = document.getElementById("mobileMenu"),
+          backdrop = document.getElementById("mobileBackdrop"),
+          close = document.getElementById("mobileClose");
+    function open() {
+      menu.classList.add("is-open");
+      backdrop.classList.add("is-open");
+      btn.classList.add("is-active");
+      document.body.style.overflow = "hidden";
+    }
+    function shut() {
+      menu.classList.remove("is-open");
+      backdrop.classList.remove("is-open");
+      btn.classList.remove("is-active");
+      document.body.style.overflow = "";
+    }
+    btn.onclick = () => (menu.classList.contains("is-open") ? shut() : open());
+    close.onclick = shut;
+    backdrop.onclick = shut;
+    document.querySelectorAll(".mobile-nav a").forEach((a) =>
+      a.addEventListener("click", shut)
+    );
+    // Basit form
+    document
+      .getElementById("contactForm")
+      .addEventListener("submit", function (e) {
+        e.preventDefault();
+        document.getElementById("formSuccess").classList.add("is-visible");
+        this.reset();
+      });
+      setTimeout(() => document.getElementById("formSuccess").classList.remove("is-visible"), 4000);
+  </script>
+</body>
+</html>
