@@ -221,7 +221,7 @@
             display: flex;
             align-items: center;
             justify-content: space-between;
-            height: 72px;
+            height: 95px;
             gap: 24px;
         }
         .logo {
@@ -233,6 +233,25 @@
             color: var(--primary);
             letter-spacing: -0.02em;
             flex-shrink: 0;
+            line-height: 0;
+            transition: transform var(--transition), opacity var(--transition);
+        }
+        .logo:hover {
+            transform: translateY(-1px);
+            opacity: 0.92;
+        }
+        .logo:focus-visible {
+            outline: 2px solid var(--accent);
+            outline-offset: 4px;
+            border-radius: var(--radius-sm);
+        }
+        .logo img {
+            height: 85px;
+            width: auto;
+            display: block;
+            object-fit: contain;
+            -webkit-user-drag: none;
+            user-select: none;
         }
         .logo-dot {
             width: 10px;
@@ -1480,6 +1499,9 @@
                 height: 64px;
                 gap: 10px;
             }
+            .logo img {
+                height: 36px;
+            }
             .hero {
                 padding: 48px 0 56px;
             }
@@ -1594,9 +1616,15 @@
     <!-- Header -->
     <header class="site-header" id="siteHeader">
         <div class="container header-inner">
-            <a href="#" class="logo" aria-label="Gelişim Teknik Servis">
-                <span class="logo-dot"></span>
-                Gelişim<span class="logo-text-accent">Teknik</span>
+            <a href="#" class="logo" aria-label="Gelişim Teknik Servis - Ana sayfa">
+                <img
+                    src="assets/images/firma-logo.png"
+                    alt="Gelişim Teknik Servis"
+                    width="264"
+                    height="176"
+                    decoding="async"
+                    fetchpriority="high"
+                />
             </a>
             <nav class="nav" aria-label="Ana menü">
                 <a href="#hizmetler">Hizmetler</a>
@@ -1625,9 +1653,15 @@
     <div class="mobile-menu-backdrop" id="mobileMenuBackdrop" aria-hidden="true"></div>
     <aside class="mobile-menu" id="mobileMenu" aria-label="Mobil menü" aria-hidden="true">
         <div class="mobile-menu-head">
-            <a href="#" class="logo">
-                <span class="logo-dot"></span>
-                Gelişim<span class="logo-text-accent">Teknik</span>
+            <a href="#" class="logo" aria-label="Gelişim Teknik Servis - Ana sayfa">
+                <img
+                    src="assets/images/firma-logo.jpeg"
+                    alt="Gelişim Teknik Servis"
+                    width="240"
+                    height="160"
+                    decoding="async"
+                    loading="lazy"
+                />
             </a>
             <button class="mobile-menu-close" type="button" id="mobileMenuClose" aria-label="Menüyü kapat">
                 <i class="material-icons-round">close</i>
